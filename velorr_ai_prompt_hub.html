@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velorr Fragrances — AI Prompt Suite</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0a0a0c',
+              dark: '#121216',
+              card: '#18181f',
+              border: '#2a2a35',
+              gold: '#d4af37',
+              goldLight: '#f3e5ab',
+              goldDark: '#aa820a',
+              rose: '#e0a96d',
+              accent: '#2b2319'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            cinzel: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2a35;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(24, 24, 31, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Gold Metallic Text Gradient */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff3d1 0%, #d4af37 50%, #aa820a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+    }
+
+    /* Subtle Ambient Glow */
+    .hero-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(10, 10, 12, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-gray-200 font-sans min-h-screen relative selection:bg-brand-gold selection:text-black antialiased">
+
+  <!-- Ambient Background Glow -->
+  <div class="hero-glow"></div>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20">
+
+    <!-- Header / Branding -->
+    <header class="py-8 border-b border-brand-border/60 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4 text-center md:text-left">
+        <div class="w-12 h-12 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-dark/80 shadow-lg shadow-brand-gold/5">
+          <span class="font-cinzel text-xl font-bold text-brand-gold">V</span>
+        </div>
+        <div>
+          <h1 class="font-cinzel text-2xl tracking-widest text-white font-bold">VELORR</h1>
+          <p class="text-xs tracking-widest text-brand-gold/80 uppercase font-medium">Haute Parfumerie • AI Prompt Studio</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <a href="https://velorr.in" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase border border-brand-gold/30 hover:border-brand-gold bg-brand-dark text-brand-goldLight hover:text-white transition-all flex items-center gap-2">
+          <span>Visit Velorr.in</span>
+          <i class="fa-solid font-xs fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="py-12 text-center max-w-3xl mx-auto">
+      <span class="px-3 py-1 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs tracking-widest uppercase inline-block mb-4">
+        AI Generation Toolkit
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+        Crafting Luxury Visuals & Stories for <span class="gold-gradient-text">Velorr</span>
+      </h2>
+      <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+        Curated AI prompts engineered for Midjourney, DALL-E, ChatGPT, and Claude. Designed specifically to encapsulate the olfactory elegance of <span class="text-brand-goldLight italic">Madam, Baby, The Glory,</span> and <span class="text-brand-goldLight italic">The Titanic</span>.
+      </p>
+    </section>
+
+    <!-- Interactive Filters & Search Bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+      
+      <!-- Filter Tabs -->
+      <div class="flex items-center p-1 bg-brand-dark rounded-xl border border-brand-border w-full md:w-auto overflow-x-auto">
+        <button id="tab-all" onclick="filterCategory('all')" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap bg-brand-gold text-black font-semibold shadow-md">
+          <i class="fa-solid fa-layer-group mr-2"></i>All Prompts
+        </button>
+        <button id="tab-visual" onclick="filterCategory('visual')" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all whitespace-nowrap">
+          <i class="fa-solid fa-camera-retro mr-2"></i>Visual / Image AI
+        </button>
+        <button id="tab-copywriting" onclick="filterCategory('copywriting')" class="tab-btn px-5 py-2.5 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all whitespace-nowrap">
+          <i class="fa-solid fa-pen-nib mr-2"></i>Copywriting & Ads
+        </button>
+      </div>
+
+      <!-- Live Search input -->
+      <div class="relative w-full md:w-72">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search prompts or keywords..." class="w-full pl-10 pr-4 py-2.5 bg-brand-dark border border-brand-border rounded-xl text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold/60 transition-all">
+      </div>
+    </div>
+
+    <!-- Prompts Grid -->
+    <div id="promptsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+      
+      <!-- Card 1: Visual Option A -->
+      <div class="prompt-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-category="visual" data-keywords="luxury dark mood midnight evening after dark the glory madam coffee vanilla obsidian marble amber midjourney dall-e photography">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-amber-950/60 text-amber-300 border border-amber-800/40 inline-block mb-2">Visual AI • Midjourney / DALL-E</span>
+              <h3 class="font-serif text-xl font-semibold text-white">Option A: Luxury Dark Mood</h3>
+              <p class="text-xs text-brand-goldLight/80 italic mt-0.5">Best for "After Dark" Scents: The Glory & Madam</p>
+            </div>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-brand-dark text-gray-400 border border-brand-border shrink-0">--ar 4:5</span>
+          </div>
+          <div class="relative group my-4">
+            <pre class="bg-brand-black/90 p-4 rounded-xl text-xs sm:text-sm text-gray-300 font-mono whitespace-pre-wrap border border-brand-border/60 leading-relaxed overflow-x-auto">A high-end luxury perfume bottle standing on a sleek black marble slab in a dimly lit, moody room. Warm amber lighting glowing from the side, soft ambient shadows, scattered coffee beans and delicate vanilla pods around the base. Editorial perfume commercial photography, highly detailed glass texture, rich dark aesthetics, 8k resolution, cinematic lighting --ar 4:5 --style raw</pre>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-brand-border/40">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Dark Aesthetic</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Cinematic</span>
+          </div>
+          <button onclick="copyToClipboard(this, `A high-end luxury perfume bottle standing on a sleek black marble slab in a dimly lit, moody room. Warm amber lighting glowing from the side, soft ambient shadows, scattered coffee beans and delicate vanilla pods around the base. Editorial perfume commercial photography, highly detailed glass texture, rich dark aesthetics, 8k resolution, cinematic lighting --ar 4:5 --style raw`)" class="copy-btn px-4 py-2 rounded-lg bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black font-semibold text-xs transition-all flex items-center gap-2 border border-brand-gold/30">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Visual Option B -->
+      <div class="prompt-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-category="visual" data-keywords="bright minimalist day scents baby the titanic travertine cucumber citrus clean morning light sunlit midjourney dall-e product photography">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 inline-block mb-2">Visual AI • Midjourney / DALL-E</span>
+              <h3 class="font-serif text-xl font-semibold text-white">Option B: Bright Minimalist</h3>
+              <p class="text-xs text-brand-goldLight/80 italic mt-0.5">Best for Day Scents: Baby & The Titanic</p>
+            </div>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-brand-dark text-gray-400 border border-brand-border shrink-0">--v 6.0</span>
+          </div>
+          <div class="relative group my-4">
+            <pre class="bg-brand-black/90 p-4 rounded-xl text-xs sm:text-sm text-gray-300 font-mono whitespace-pre-wrap border border-brand-border/60 leading-relaxed overflow-x-auto">Minimalist luxury perfume bottle placed on a clean white travertine stone pedestal against a soft pastel cream backdrop. Fresh green cucumber slices and bright citrus elements subtly styled nearby. Sunlit morning light casting clean architectural shadows, high-end cosmetics advertising style, photorealistic, sharp focus --ar 4:5 --v 6.0</pre>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-brand-border/40">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Fresh & Organic</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Sunlit</span>
+          </div>
+          <button onclick="copyToClipboard(this, `Minimalist luxury perfume bottle placed on a clean white travertine stone pedestal against a soft pastel cream backdrop. Fresh green cucumber slices and bright citrus elements subtly styled nearby. Sunlit morning light casting clean architectural shadows, high-end cosmetics advertising style, photorealistic, sharp focus --ar 4:5 --v 6.0`)" class="copy-btn px-4 py-2 rounded-lg bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black font-semibold text-xs transition-all flex items-center gap-2 border border-brand-gold/30">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Copywriting Option A -->
+      <div class="prompt-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-category="copywriting" data-keywords="instagram reel script ad video video cues the glory pear coffee pink pepper vanilla cedarwood chatgpt claude seductive date night">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-purple-950/60 text-purple-300 border border-purple-800/40 inline-block mb-2">Copywriting • ChatGPT / Claude</span>
+              <h3 class="font-serif text-xl font-semibold text-white">Option A: Instagram Reel / Ad Script</h3>
+              <p class="text-xs text-brand-goldLight/80 italic mt-0.5">Spotlight Focus: The Glory (Evening Wear & Date Nights)</p>
+            </div>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-brand-dark text-gray-400 border border-brand-border shrink-0">30-Sec Reel</span>
+          </div>
+          <div class="relative group my-4">
+            <pre class="bg-brand-black/90 p-4 rounded-xl text-xs sm:text-sm text-gray-300 font-mono whitespace-pre-wrap border border-brand-border/60 leading-relaxed overflow-x-auto">Act as a luxury fragrance copywriter for Velorr (velorr.in). Write a 30-second Instagram Reel script for our signature fragrance, 'The Glory' (notes: pear, coffee, pink pepper, vanilla, cedarwood). The tone should be bold, seductive, and sophisticated—aimed at evening wear and date nights. Include visual cues for the videographer and a strong call-to-action.</pre>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-brand-border/40">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Social Video</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Seductive</span>
+          </div>
+          <button onclick="copyToClipboard(this, `Act as a luxury fragrance copywriter for Velorr (velorr.in). Write a 30-second Instagram Reel script for our signature fragrance, 'The Glory' (notes: pear, coffee, pink pepper, vanilla, cedarwood). The tone should be bold, seductive, and sophisticated—aimed at evening wear and date nights. Include visual cues for the videographer and a strong call-to-action.`)" class="copy-btn px-4 py-2 rounded-lg bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black font-semibold text-xs transition-all flex items-center gap-2 border border-brand-gold/30">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: Copywriting Option B -->
+      <div class="prompt-card glass-card p-6 rounded-2xl flex flex-col justify-between" data-category="copywriting" data-keywords="email newsletter welcome sequence signature pulse points madam baby the glory the titanic chatgpt claude discounts onboarding">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-blue-950/60 text-blue-300 border border-blue-800/40 inline-block mb-2">Copywriting • Email & Retention</span>
+              <h3 class="font-serif text-xl font-semibold text-white">Option B: Email Welcome Sequence</h3>
+              <p class="text-xs text-brand-goldLight/80 italic mt-0.5">Brand Philosophy: "Perfume isn't sprayed, it's placed"</p>
+            </div>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-brand-dark text-gray-400 border border-brand-border shrink-0">Email Copy</span>
+          </div>
+          <div class="relative group my-4">
+            <pre class="bg-brand-black/90 p-4 rounded-xl text-xs sm:text-sm text-gray-300 font-mono whitespace-pre-wrap border border-brand-border/60 leading-relaxed overflow-x-auto">Write a welcome email for first-time visitors to Velorr, a premium Indian fragrance brand. Introduce our philosophy ('Perfume isn't sprayed, it's placed'—focusing on pulse points like behind the ears, base of the neck, and inner wrists). Highlight our four core moods (Madam, Baby, The Glory, The Titanic) and include a welcoming discount hook. Keep the voice elegant, intimate, and modern.</pre>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-brand-border/40">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Brand Storytelling</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Email Marketing</span>
+          </div>
+          <button onclick="copyToClipboard(this, `Write a welcome email for first-time visitors to Velorr, a premium Indian fragrance brand. Introduce our philosophy ('Perfume isn't sprayed, it's placed'—focusing on pulse points like behind the ears, base of the neck, and inner wrists). Highlight our four core moods (Madam, Baby, The Glory, The Titanic) and include a welcoming discount hook. Keep the voice elegant, intimate, and modern.`)" class="copy-btn px-4 py-2 rounded-lg bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black font-semibold text-xs transition-all flex items-center gap-2 border border-brand-gold/30">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5: Copywriting Option C -->
+      <div class="prompt-card glass-card p-6 rounded-2xl flex flex-col justify-between lg:col-span-2" data-category="copywriting" data-keywords="meta ads ad copy facebook instagram 799 long lasting luxury sillage day night gifting discovery sales direct response chatgpt">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-rose-950/60 text-rose-300 border border-rose-800/40 inline-block mb-2">Copywriting • Direct Response Ads</span>
+              <h3 class="font-serif text-xl font-semibold text-white">Option C: Meta Ads Copy (FB / Instagram)</h3>
+              <p class="text-xs text-brand-goldLight/80 italic mt-0.5">Target Price Point: ₹799 • Angles: Sillage, Duality & Gifting</p>
+            </div>
+            <span class="text-xs font-mono px-2 py-1 rounded bg-brand-dark text-gray-400 border border-brand-border shrink-0">3 Ad Variations</span>
+          </div>
+          <div class="relative group my-4">
+            <pre class="bg-brand-black/90 p-4 rounded-xl text-xs sm:text-sm text-gray-300 font-mono whitespace-pre-wrap border border-brand-border/60 leading-relaxed overflow-x-auto">Generate 3 distinct high-converting Facebook/Instagram ad variations for Velorr perfumes (priced at ₹799). Focus the angles on: (1) Long-lasting luxury sillage, (2) The duality of day vs. night scents, and (3) Gifting/signature scent discovery. Keep hook lines punchy and optimize for mobile scrolling.</pre>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-brand-border/40">
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">Performance Marketing</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-dark text-gray-400 border border-brand-border">High Conversion</span>
+          </div>
+          <button onclick="copyToClipboard(this, `Generate 3 distinct high-converting Facebook/Instagram ad variations for Velorr perfumes (priced at ₹799). Focus the angles on: (1) Long-lasting luxury sillage, (2) The duality of day vs. night scents, and (3) Gifting/signature scent discovery. Keep hook lines punchy and optimize for mobile scrolling.`)" class="copy-btn px-4 py-2 rounded-lg bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black font-semibold text-xs transition-all flex items-center gap-2 border border-brand-gold/30">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Custom Prompt Builder / Generator -->
+    <section class="glass-card p-6 sm:p-8 rounded-3xl border border-brand-gold/20 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+          <i class="fa-solid fa-sliders text-lg"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl sm:text-2xl font-semibold text-white">Velorr Interactive Prompt Customizer</h3>
+          <p class="text-xs text-gray-400">Tailor variables on the fly to generate a dynamic prompt for your next campaign.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <!-- Select Fragrance -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-brand-goldLight mb-2">1. Fragrance Selection</label>
+          <select id="builderScent" onchange="generateCustomPrompt()" class="w-full bg-brand-dark border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="The Glory (Notes: Pear, Coffee, Pink Pepper, Vanilla)">The Glory (Evening / Mysterious)</option>
+            <option value="Madam (Notes: Powdery Floral, Soft Spice, Amber)">Madam (Seductive / Elegant)</option>
+            <option value="Baby (Notes: Light Citrus, Delicate Florals, Soft Musk)">Baby (Fresh / Daily)</option>
+            <option value="The Titanic (Notes: Crisp Aquatic, Cucumber, Sea Breeze)">The Titanic (Clean / Bold)</option>
+            <option value="All Four Fragrances (Madam, Baby, The Glory, The Titanic)">Full Collection (Discovery Set)</option>
+          </select>
+        </div>
+
+        <!-- Select Format -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-brand-goldLight mb-2">2. Output Objective</label>
+          <select id="builderObjective" onchange="generateCustomPrompt()" class="w-full bg-brand-dark border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="Midjourney 3D product photo render with cinematic studio lighting">Midjourney Visual Render</option>
+            <option value="High-converting Meta Video Ad Script for TikTok & Instagram Reels">Video Reel Script</option>
+            <option value="Intimate email newsletter highlighting perfume placement on pulse points">Email Storytelling Copy</option>
+            <option value="Product description for Velorr luxury e-commerce website">Website Product Copy</option>
+          </select>
+        </div>
+
+        <!-- Select Aesthetic / Tone -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-brand-goldLight mb-2">3. Brand Vibe / Tone</label>
+          <select id="builderTone" onchange="generateCustomPrompt()" class="w-full bg-brand-dark border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="Moody, dark obsidian luxury, warm amber candlelight glow">Dark & Mysterious</option>
+            <option value="Sunlit travertine stone, bright minimalist luxury, architectural shadows">Bright & Clean Minimalist</option>
+            <option value="Seductive, sensual, high-end Parisian boutique tone">Seductive & Intimate</option>
+            <option value="Modern, punchy, direct response, lifestyle focused">Modern Direct Response</option>
+          </select>
+        </div>
+
+        <!-- Target Platform -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-brand-goldLight mb-2">4. Targeted AI Platform</label>
+          <select id="builderPlatform" onchange="generateCustomPrompt()" class="w-full bg-brand-dark border border-brand-border rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="Midjourney v6.0 (--ar 4:5 --style raw)">Midjourney v6.0</option>
+            <option value="ChatGPT (GPT-4o)">ChatGPT / GPT-4o</option>
+            <option value="Claude 3.5 Sonnet">Claude 3.5 Sonnet</option>
+            <option value="DALL-E 3">DALL-E 3</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live Generated Output Box -->
+      <div class="relative mt-4">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Generated Prompt Output:</label>
+        <pre id="customPromptOutput" class="bg-brand-black p-4 rounded-xl text-xs sm:text-sm text-brand-goldLight font-mono whitespace-pre-wrap border border-brand-gold/30 min-h-[90px] leading-relaxed"></pre>
+        <button onclick="copyCustomPrompt(this)" class="mt-3 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldDark text-black font-bold text-xs hover:brightness-110 transition-all shadow-md flex items-center justify-center gap-2 w-full sm:w-auto">
+          <i class="fa-solid fa-copy"></i>
+          <span>Copy Custom Prompt</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-xs text-gray-500 border-t border-brand-border/40 pt-8">
+      <p>© Velorr Fragrances. Crafted for olfactory luxury.</p>
+      <p class="mt-1">Visit official store: <a href="https://velorr.in" target="_blank" class="text-brand-gold hover:underline">velorr.in</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-brand-dark border border-brand-gold text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-brand-gold/20 border border-brand-gold flex items-center justify-center text-brand-gold text-xs">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <div>
+        <p class="text-xs font-bold text-brand-goldLight">Prompt Copied!</p>
+        <p class="text-[11px] text-gray-400">Ready to paste into your AI generator.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Tab Filtering Logic
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.prompt-card');
+      const tabs = document.querySelectorAll('.tab-btn');
+
+      // Update Active Tab Styling
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-brand-gold', 'text-black', 'font-semibold', 'shadow-md');
+        tab.classList.add('text-gray-400');
+      });
+
+      const activeTab = document.getElementById(`tab-${category}`);
+      if (activeTab) {
+        activeTab.classList.add('bg-brand-gold', 'text-black', 'font-semibold', 'shadow-md');
+        activeTab.classList.remove('text-gray-400');
+      }
+
+      // Filter Cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Live Search Logic
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.prompt-card');
+
+      cards.forEach(card => {
+        const keywords = card.getAttribute('data-keywords').toLowerCase();
+        const content = card.textContent.toLowerCase();
+
+        if (keywords.includes(query) || content.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Copy to Clipboard helper with Toast
+    function copyToClipboard(buttonEl, text) {
+      // Execute legacy copy for webview compatibility
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = text;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempTextArea);
+
+      // Button Visual Feedback
+      const originalHTML = buttonEl.innerHTML;
+      buttonEl.innerHTML = `<i class="fa-solid fa-check"></i><span>Copied!</span>`;
+      buttonEl.classList.add('bg-emerald-500', 'text-white', 'border-emerald-400');
+      buttonEl.classList.remove('bg-brand-gold/10', 'text-brand-gold');
+
+      setTimeout(() => {
+        buttonEl.innerHTML = originalHTML;
+        buttonEl.classList.remove('bg-emerald-500', 'text-white', 'border-emerald-400');
+        buttonEl.classList.add('bg-brand-gold/10', 'text-brand-gold');
+      }, 2000);
+
+      showToast();
+    }
+
+    // Show Toast
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Custom Dynamic Prompt Generator Logic
+    function generateCustomPrompt() {
+      const scent = document.getElementById('builderScent').value;
+      const objective = document.getElementById('builderObjective').value;
+      const tone = document.getElementById('builderTone').value;
+      const platform = document.getElementById('builderPlatform').value;
+
+      let generatedString = "";
+
+      if (platform.includes("Midjourney") || platform.includes("DALL-E")) {
+        generatedString = `Commercial luxury perfume photography for Indian haute-parfumerie brand Velorr (velorr.in). Featuring fragrance: ${scent}. Aesthetic atmosphere: ${tone}. Stylized as a high-end visual advertisement with crisp reflections and soft atmospheric depth. Designed for ${platform}.`;
+      } else {
+        generatedString = `Act as an expert luxury fragrance copywriter for Velorr (velorr.in). Write a ${objective} focusing on our signature perfume: ${scent}. Adhere strictly to the brand tone: ${tone}. Emphasize Velorr's signature philosophy: 'Perfume isn't sprayed, it's placed' (highlighting pulse points like inner wrists, neck, and behind the ears). Tailored specifically for execution in ${platform}.`;
+      }
+
+      document.getElementById('customPromptOutput').textContent = generatedString;
+    }
+
+    function copyCustomPrompt(btn) {
+      const outputText = document.getElementById('customPromptOutput').textContent;
+      copyToClipboard(btn, outputText);
+    }
+
+    // Initialize custom generator on page load
+    window.onload = function() {
+      generateCustomPrompt();
+    };
+  </script>
+</body>
+</html>
